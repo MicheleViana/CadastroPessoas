@@ -61,7 +61,9 @@ public class Main {
 
     private static void addStudant(List<Person> studants) {
         Person studant = new Person();
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Qual o nome do estudante?");
+        String name =  scanner.next();
+        studant.name = name;
 
     }
 
