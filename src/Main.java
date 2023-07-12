@@ -24,17 +24,14 @@ public class Main {
             System.out.println("5 - Exit");
 
             int option = scanner.nextInt();
-            scanner.close();
             switch (option) {
                 case 1:
                     addStudant(studants);
                     break;
                 case 2:
-                    System.out.println("Qual o nome que deseja buscar?");
-                    scanner = new Scanner(System.in);
-                    String nametofind = scanner.nextLine();
-                    findStudant(studants, nametofind);
+                    buscarStudant(studants);
                     break;
+
                 case 3:
                     removeStudant();
                     break;
@@ -106,6 +103,8 @@ public class Main {
                 System.out.println("Encontrei o " + studantName);
             }
         }
-        return position;
+    return position;
+
     }
 }
+
