@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -5,7 +6,7 @@ import java.util.Scanner;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner  = new Scanner(System.in);
 
     static List<Person> studants = new ArrayList<Person>();
 
@@ -15,6 +16,10 @@ public class Main {
         boolean exit = true;
         while (exit) {
             Person studant = new Person();
+            Person age = new Person();
+            Person sex = new Person();
+
+
 
             System.out.println("Selecione a opção");
             System.out.println("1 - Cadastrar");
@@ -45,15 +50,18 @@ public class Main {
             System.out.println("Digite o nome completo do estudante");
             studant.name = scanner.nextLine();
             studants.add(studant);
-            System.out.println("Obrigado por digitar o nome completo do " + studant.name);
-
-            System.out.println("Deseja cadastrar mais um? 1/SIM E 2/NÃO");
-            option = scanner.nextInt();
-            if (option == 0) {
-                exit = false;
-            }
+            System.out.println("Qual é a idade de " + studant.name +" ?");
+            studant.age = scanner.nextInt();
+            System.out.println("Qual é o genêro de " + studant.name + "? (F ou M)");
+            studant.sex = scanner.next();
+            studants.add(studant);
+            System.out.println("Agradeço pela resposta!" + " O estudante cadastrado foi: " + studant.name + ", que possui "+ studant.age + " anos de idade e pertence ao gênero: " + studant.sex + "!");
         }
-    }
+
+
+            }
+
+
 
 
     private static void addStudant(List<Person> studants) {
@@ -104,6 +112,7 @@ public class Main {
             }
         }
     return position;
+
 
     }
 }

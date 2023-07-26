@@ -1,8 +1,17 @@
 public class Person {
 
-    String name;
+       public  String name;
+       public Integer age;
+        public String sex;
+    }
 
 
 
 
-}
+
+
+
+
+
+
+
